@@ -4,7 +4,7 @@ Para llevar a cabo un manejo practico de la información, se creara un DataFrame
 
 ### Paso 1. Descarga de datos en formato XML y análisis del árbol que se genera:
 ```{r}
+#Mandamos llamar la librería xml2, y leemos nuestro archivo XML desde la URL de GitHub proporcionada: 
 library(xml2)
 poetas <- read_xml('https://github.com/mcd-unison/ing-caract/raw/main/ejemplos/integracion/ejemplos/wikipedia-poetas.xml')
-
 ```
