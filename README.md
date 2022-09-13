@@ -27,5 +27,14 @@ Al ver los diferentes nodos que conforman este archivo, pude percatarme que podr
 xml_df = tibble::as_tibble(poetas_lista_xml) %>%
   unnest_longer(mediawiki)
 ```
+![image](https://user-images.githubusercontent.com/111605081/189788582-f6276098-3885-4148-a701-efed78d9b7bf.png)
 
+```{r}
+#Vemos que los datos que están en las etiquetas “revisión” son las que tienen datos que podrían interesarons, por ello, se descartan las etiquetas distintas usando dplyr::filter. Luego, necesito expandir los atributos de cada licencia en cada columna (es decir, una columna para TIPO, otra columna para DIST, etc.). A diferencia del paso anterior, esta vez se usa unnest_wider para "expandir" los datos en una sola columna a múltiples columnas (por lo tanto, más “anchas”).
+
+lp_wider = xml_df %>%
+  dplyr::filter(mediawiki_id == "revision") %>%
+  unnest_wider(mediawiki) 
+```
+![image](https://user-images.githubusercontent.com/111605081/189789088-ea7f46be-3295-4f9c-8164-1a717dcf7ca7.png)
 
