@@ -38,3 +38,19 @@ lp_wider = xml_df %>%
 ```
 ![image](https://user-images.githubusercontent.com/111605081/189789088-ea7f46be-3295-4f9c-8164-1a717dcf7ca7.png)
 
+
+```{r}
+# Los datos tienen que ser anidados dos veces. Los siguientes son los resultados después de pasar lp_wider a través del primer y segundo anidamiento. Después del primer anidamiento, cada columna sigue siendo un tipo de lista con una longitud de 1. Los datos se exponen solo después del segundo anidamiento: 
+
+lp_df <- lp_wider %>%
+  # 1er anidamiento
+  unnest(cols = names(.)) %>%
+  # 2do anidamiento
+  unnest(cols = names(.)) %>%
+  # Convertir tipo de datos
+  readr::type_convert() 
+```
+![image](https://user-images.githubusercontent.com/111605081/189790616-281a3522-5b79-4213-94d4-2d8341eca782.png)
+
+
+
