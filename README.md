@@ -50,7 +50,7 @@ lp_df <- lp_wider %>%
   # Convertir tipo de datos
   readr::type_convert() 
 ```
-Podemos percatarnos que aun con estos "anidados", la columna "text" tiene información en formato xml, por lo que será necesario hacer el desglose de esta columna.
+Podemos percatarnos que aun con estos "anidados", la columna "text" tiene información en formato HTML, por lo que será necesario hacer el desglose de esta columna.
 ![image](https://user-images.githubusercontent.com/111605081/189790616-281a3522-5b79-4213-94d4-2d8341eca782.png)
 
 
